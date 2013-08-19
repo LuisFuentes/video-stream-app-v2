@@ -1,0 +1,106 @@
+<!doctype html> <html>
+<head>
+	<title>Video Streaming App</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href= "{{url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+	<link rel="shortcut icon" href="http://flash.flowplayer.org/favicon.ico">
+<!-- standalone page styling. can be removed -->
+	<style>
+		#playback{
+		width:620px;
+		height:400px;
+		}
+	</style>
+ 
+<!-- flowplayer javascript component -->
+<script src=" {{url_for('static', filename='flowplayer/flowplayer-3.2.12.min.js') }}"></script>
+ 
+</head>
+ 
+<body>
+	<div class="container">					
+		
+		<div class="navbar navbar-inverse" id="topmenu">
+			
+			<div class="navbar-inner">
+				
+				<div class="container">
+					<a href="#" class="brand">Video Streaming App</a>
+
+						<ul class="nav">
+						<li class="divider-vertical"></li>
+						<li><a href="#" >Home</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="#">About</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="#">Contact Us</a></li>
+						<li class="divider-vertical" ></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row" >
+			<div class="span4" id="sidemenu">
+				<ul class="nav nav-list">
+					<li class="nav-header">Choose a video:</li>
+				</ul>
+
+				<div class="btn-group">
+					<a class="btn dropdown-toggle btn-primary" data-toggle="dropdown">
+					Videos:
+					<span class="caret"></span>
+					</a>
+					
+					 <ul class="dropdown-menu">
+						 <!--
+						 The <li> elements below are the videos that you wish to play.
+						 The id is the parameter passed into the playVideo() function
+						 that will use the id as the video's file name.
+						 !-->
+				        <li onclick="playVideo(this.id)" id="cat"><a>Funny Cat</a></li>
+				        <li onclick="playVideo(this.id)" id="space"><a>Learn Something New</a></li>
+				        <li onclick="playVideo(this.id)" id="corgi"><a>Funny Corgi</a></li>
+				    </ul>
+				</div>
+			</div>
+			<div class="span8" id="playback">
+				
+			</div>
+		</div>
+
+	</div>
+
+<script>
+		
+		function playVideo(vidURL) {
+			vidURL =  vidURL + ".flv";
+			
+			$f("playback", "{{url_for('static', filename='flowplayer/flowplayer-3.2.16.swf') }}", {
+				clip: {
+					url: vidURL,
+					live: false,
+					autoPlay: true,
+					provider: 'hddn',
+				},
+				plugins: {
+					// here is our rtmp plugin configuration
+					hddn: {
+					url: "{{url_for('static', filename='flowplayer/flowplayer.rtmp-3.2.12.swf') }}",
+					netConnectionUrl: 'rtmp://127.0.0.1/flvplayback'
+				}
+				},
+				canvas: {
+				backgroundGradient: 'none'
+				}
+			});
+		}
+
+</script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src= "{{url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+		 
+</body>
+ 
+</html>

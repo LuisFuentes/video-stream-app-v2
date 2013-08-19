@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<MAP isArray="false" name="">
+    <UINT32 name="audioFramesCount">987</UINT32>
+    <DOUBLE name="bandwidth">439.662</DOUBLE>
+    <DOUBLE name="duration">22.871</DOUBLE>
+    <DOUBLE name="endTimestamp">22.871</DOUBLE>
+    <UINT64 name="fileSize">1238088</UINT64>
+    <STR name="mediaFullPath">/home/luis/video-stream-app/videoApp/flaskApp/app/static/cat.flv</STR>
+    <DOUBLE name="startTimestamp">0.000</DOUBLE>
+    <UINT32 name="totalFramesCount">1559</UINT32>
+    <UINT32 name="videoFramesCount">571</UINT32>
+</MAP>

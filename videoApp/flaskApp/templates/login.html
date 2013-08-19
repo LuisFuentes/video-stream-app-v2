@@ -1,0 +1,39 @@
+<!doctype html> <html>
+	<head>
+
+		<title>Video Streaming App - Login</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		 
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.css') }}"/>
+	</head>
+	
+	<body>
+		<section>
+			<div class="container login">
+				<div class="row" id="main-content">
+					<div class="span4 offset4" id="sidebar">
+						<div class="well" style="background-color:Cornsilk">
+							<legend>Please Sign In</legend>
+								<form method="post" action="{{url_for('signup') }}" >
+								<input type="text" id="username" name="username" name="username" placeholder="Username" required />
+								<input type="password" id="password" name="password" name="password" placeholder="Password" required />
+								<button type="submit" name="submit" class="btn btn-success" onclick="login()">Sign in</button>
+								</form>		
+						</div>
+					</div>
+				</div>
+			</div>	
+		</section>
+	
+	<!-- JavaScript -->
+	<script>
+		
+	</script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="{{url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
+	</body>
+
+	
+</html>

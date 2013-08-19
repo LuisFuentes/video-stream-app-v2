@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<MAP isArray="false" name="">
+    <UINT32 name="audioFramesCount">3010</UINT32>
+    <DOUBLE name="bandwidth">422.738</DOUBLE>
+    <DOUBLE name="duration">69.846</DOUBLE>
+    <DOUBLE name="endTimestamp">69.846</DOUBLE>
+    <UINT64 name="fileSize">3733624</UINT64>
+    <STR name="mediaFullPath">/home/luis/video-stream-app/videoApp/flaskApp/app/static/corgi.flv</STR>
+    <DOUBLE name="startTimestamp">0.000</DOUBLE>
+    <UINT32 name="totalFramesCount">5105</UINT32>
+    <UINT32 name="videoFramesCount">2094</UINT32>
+</MAP>
