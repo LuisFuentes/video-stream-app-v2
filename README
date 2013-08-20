@@ -1,0 +1,38 @@
+As of 8/17/2013
+
+Notes:
+	For your installation location of crtmpserver:
+
+	The location of the "mediaFolder" is located inside the crtmpserver folder under
+	"crtmpserver/builders/cmake/crtmpserver/crtmpserver.lua". Inside this .lua file,
+	the "mediaFolder" tag is inside the Sample FLV Playback tag. The "mediaFolder" tag
+	is the reference directory location for all .FLV videos that can be accessed by
+	crtmpserver.
+	
+	cd <install-directory/crtmpserver/builders/cmake/crtmpserver
+	<open editor - gedit?> crtmpserver.lua
+	//Find Sample FLV Playback tag and add:
+		mediaFolder="<path_to_flv_files", //note the comma at the end
+		
+To Run:
+	Open multiple tabs/windows for terminal
+
+	1)Crtmpserver run:
+	
+	Go to directory - crtmpserver/builders/cmake/ then run this
+	./crtmpserver/crtmpserver ./crtmpserver/crtmpserver.lua
+	
+	2)Python Flask run:
+	Go to directory - video-stream-app/videoApp/flaskApp then run this
+	python ./run.pc
+	
+	3)Open up firefox and visit "localhost:5000"
+	
+The App:
+	Runs a web app that ultizies BootStrap2.3 interface and uses Flask to run the HTML
+	index page. Upon opening the page location, Apache opens the Python web page (index.html)
+	and connects the components of Flowplayer correctly. Flowplayer is a simple video player
+	that can be placed inside a html page.
+	Once a user has selected a video to stream from the drop down menu, the html page sends a
+	request to the crtmpserver to access the video location of the video. The crtmpserver will then
+	return the video and autoplay the chosen video to the user inside the HTML page dynamically.
