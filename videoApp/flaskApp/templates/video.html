@@ -5,13 +5,19 @@
     <!-- Bootstrap -->
     <link href= "{{url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
 	<link rel="shortcut icon" href="http://flash.flowplayer.org/favicon.ico">
-<!-- standalone page styling. can be removed -->
+<!-- standalone page styling. can be removed !-->
 	<style>
+		
 		#playback{
-		width:620px;
-		height:400px;
+			width:620px;
+			height:400px;
+		}
+		#title{
+			font-size:large;
 		}
 	</style>
+	
+
  
 <!-- flowplayer javascript component -->
 <script src=" {{url_for('static', filename='flowplayer/flowplayer-3.2.12.min.js') }}"></script>
@@ -26,7 +32,7 @@
 			<div class="navbar-inner">
 				
 				<div class="container">
-					<a href="#" class="brand">Video Streaming App</a>
+					<a href="#" class="brand" id="title">Video Streaming App</a>
 
 						<ul class="nav">
 						<li class="divider-vertical"></li>
@@ -73,6 +79,11 @@
 	</div>
 
 <script>
+/*
+	The playVideo function gets passed in from the frontend of the HTML page and
+	is used to reference which video to play by user's choice and that choice's id value (cat, space, corgi)
+	
+*/
 		
 		function playVideo(vidURL) {
 			vidURL =  vidURL + ".flv";
@@ -94,6 +105,7 @@
 				canvas: {
 				backgroundGradient: 'none'
 				}
+				
 			});
 		}
 
